@@ -10,7 +10,7 @@ export const Footer = () => {
     <div>
       <footer className="footer">
         <div className="container">
-          <div className="row px-6">
+          <div className="row">
             <div className="footer-col">
               <h4>About</h4>
               <ul>
@@ -72,8 +72,8 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="p-8 flex  justify-center  gap-4 ">
-        <p className="text-white text-2xl my-2 ">© 2023</p>
+        <div className="p-8 flex flex-col sm:flex-row justify-center items-center gap-4 ">
+        <p className="text-white text-2xl my-2  ">© 2023</p>
         <div className=" ">
         <img  src={Logo} alt=""/>
         </div>
