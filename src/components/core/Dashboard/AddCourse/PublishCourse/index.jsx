@@ -94,7 +94,8 @@ export default function PublishCourse() {
           >
             Back
           </button>
-          <IconBtn disabled={loading} text="Save Changes" />
+          {/* <IconBtn disabled={loading} text="Save Changes" /> */}
+          <button className="bg-yellow-50 font-semibold px-3 py-2 rounded-md">Save Changes</button>
         </div>
       </form>
     </div>

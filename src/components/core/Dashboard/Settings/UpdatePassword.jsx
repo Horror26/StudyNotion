@@ -5,7 +5,6 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 import { changePassword } from "../../../../services/operations/SettingsAPI"
-import IconBtn from "../../../common/IconBtn"
 
 export default function UpdatePassword() {
   const { token } = useSelector((state) => state.auth)
@@ -36,7 +35,7 @@ export default function UpdatePassword() {
           <h2 className="text-lg font-semibold text-richblack-5">Password</h2>
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
-              <label htmlFor="oldPassword" className="lable-style">
+              <label htmlFor="oldPassword" className="lable-style text-[#F1F2FF] text-[14px]">
                 Current Password
               </label>
               <input
@@ -44,12 +43,12 @@ export default function UpdatePassword() {
                 name="oldPassword"
                 id="oldPassword"
                 placeholder="Enter Current Password"
-                className="form-style"
+                className="form-style text-[#999DAA] bg-[#2C333F] px-3 rounded-md py-3"
                 {...register("oldPassword", { required: true })}
               />
               <span
                 onClick={() => setShowOldPassword((prev) => !prev)}
-                className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                className="absolute right-3 top-[40px] z-[10] cursor-pointer"
               >
                 {showOldPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -64,7 +63,7 @@ export default function UpdatePassword() {
               )}
             </div>
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
-              <label htmlFor="newPassword" className="lable-style">
+              <label htmlFor="newPassword" className="lable-style text-[#F1F2FF] text-[14px]">
                 New Password
               </label>
               <input
@@ -72,12 +71,12 @@ export default function UpdatePassword() {
                 name="newPassword"
                 id="newPassword"
                 placeholder="Enter New Password"
-                className="form-style"
+                className="form-style text-[#999DAA] bg-[#2C333F] px-3 rounded-md py-3"
                 {...register("newPassword", { required: true })}
               />
               <span
                 onClick={() => setShowNewPassword((prev) => !prev)}
-                className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                className="absolute right-3 top-[40px] z-[10] cursor-pointer"
               >
                 {showNewPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -93,16 +92,19 @@ export default function UpdatePassword() {
             </div>
           </div>
         </div>
-        <div className="flex justify-end gap-2">
+        <div className="flex justify-end text-white gap-2">
           <button
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-normal text-richblack-50"
           >
             Cancel
           </button>
-          <IconBtn type="submit" text="Update" />
+          
+          <button type="submit" className="text-[#000814] bg-[#FFD60A] rounded-md px-3">
+            Update
+          </button>
         </div>
       </form>
     </>

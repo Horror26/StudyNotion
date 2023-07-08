@@ -13,6 +13,7 @@ const CourseSlider = ({Courses}) => {
     <>
       {Courses?.length ? (
         <Swiper
+        navigation={true} 
           slidesPerView={1}
           spaceBetween={25}
           loop={true}
@@ -22,11 +23,11 @@ const CourseSlider = ({Courses}) => {
               slidesPerView: 3,
             },
           }}
-          className="max-h-[30rem]"
+          className="max-h-[30rem] mx-auto"
         >
           {Courses?.map((course, i) => (
             <SwiperSlide key={i}>
-              <Course_Card course={course} Height={"h-[250px]"} />
+              <Course_Card course={course} Height={"h-[230px]  md:h-[250px]"} />
             </SwiperSlide>
           ))}
         </Swiper>

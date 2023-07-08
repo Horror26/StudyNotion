@@ -17,7 +17,7 @@ import SubSectionModal from "./SubSectionModal"
 export default function NestedView({ handleChangeEditSectionName }) {
   const { course } = useSelector((state) => state.course)
   const { token } = useSelector((state) => state.auth)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // States to keep track of mode of modal [add, view, edit]
   const [addSubSection, setAddSubsection] = useState(null)
   const [viewSubSection, setViewSubSection] = useState(null)

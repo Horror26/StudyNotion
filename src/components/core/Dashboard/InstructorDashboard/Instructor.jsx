@@ -38,7 +38,7 @@ export default function Instructor() {
   
     return (
       <div>
-        <div className="space-y-2">
+        <div className="space-y-2 mt-12">
           <h1 className="text-2xl font-bold text-richblack-5">
             Hi {user?.firstName} 👋
           </h1>
@@ -50,7 +50,7 @@ export default function Instructor() {
           <div className="spinner"></div>
         ) : courses.length > 0 ? (
           <div>
-            <div className="my-4 flex h-fit space-x-4">
+            <div className="my-4 flex md:flex-row flex-col h-[600px] md:h-[450px] md:space-x-4 ">
               {/* Render chart / graph */}
               {totalAmount > 0 || totalStudents > 0 ? (
                 <InstructorChart courses={instructorData} />
@@ -63,7 +63,7 @@ export default function Instructor() {
                 </div>
               )}
               {/* Total Statistics */}
-              <div className="flex min-w-[250px] flex-col rounded-md bg-richblack-800 p-6">
+              <div className="flex md:mt-0 mx-auto mt-6 min-w-[300px] flex-col rounded-md bg-richblack-800 p-6">
                 <p className="text-lg font-bold text-richblack-5">Statistics</p>
                 <div className="mt-4 space-y-4">
                   <div>
@@ -87,7 +87,7 @@ export default function Instructor() {
                 </div>
               </div>
             </div>
-            <div className="rounded-md bg-richblack-800 p-6">
+            <div className="rounded-md bg-richblack-800 md:mt-0 mt-[200px] p-6">
               {/* Render 3 courses */}
               <div className="flex items-center justify-between">
                 <p className="text-lg font-bold text-richblack-5">Your Courses</p>
@@ -95,13 +95,13 @@ export default function Instructor() {
                   <p className="text-xs font-semibold text-yellow-50">View All</p>
                 </Link>
               </div>
-              <div className="my-4 flex items-start space-x-6">
+              <div className="my-4 flex md:flex-row flex-col w-full items-start md:space-x-6 space-y-5 md:space-y-0">
                 {courses.slice(0, 3).map((course) => (
-                  <div key={course._id} className="w-1/3">
+                  <div key={course._id} className="md:w-1/3 w-full">
                     <img
                       src={course.thumbnail}
                       alt={course.courseName}
-                      className="h-[201px] w-full rounded-md object-cover"
+                      className="h-[201px] w-[100%] md:w-full rounded-md object-cover"
                     />
                     <div className="mt-3 w-full">
                       <p className="text-sm font-medium text-richblack-50">

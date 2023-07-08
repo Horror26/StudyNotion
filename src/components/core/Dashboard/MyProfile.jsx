@@ -1,9 +1,8 @@
 import { RiEditBoxLine } from "react-icons/ri"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 import { formattedDate } from "../../../utils/dateFormatter"
-import IconBtn from "../../common/IconBtn"
 
 export default function MyProfile() {
   const { user } = useSelector((state) => state.profile)
@@ -11,43 +10,39 @@ export default function MyProfile() {
 
   return (
     <>
-      <h1 className="mb-14 text-3xl font-medium text-richblack-5">
+      <h1 className="mb-14 ml-16 md:ml-10 text-3xl font-medium text-richblack-5">
         My Profile
       </h1>
-      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
-        <div className="flex items-center gap-x-4">
+      <div className="flex md:flex-row flex-col items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
+        <div className="flex md:flex-row flex-col items-center gap-x-4">
           <img
             src={user?.image}
             alt={`profile-${user?.firstName}`}
-            className="aspect-square w-[78px] rounded-full object-cover"
+            className="aspect-square  mx-auto md:m-0 w-[78px] rounded-full object-cover"
           />
-          <div className="space-y-1">
+          <div className="space-y-1 mt-3 md:mt-0 text-center md:text-left">
             <p className="text-lg font-semibold text-richblack-5">
               {user?.firstName + " " + user?.lastName}
             </p>
             <p className="text-sm text-richblack-300">{user?.email}</p>
           </div>
         </div>
-        <IconBtn
-          text="Edit"
-          onclick={() => {
-            navigate("/dashboard/settings")
-          }}
-        >
+        
+        <Link to="/dashboard/settings"
+        className="bg-yellow-50 mt-5 md:mt-0 px-3 py-1 flex items-center gap-1 rounded-md font-medium">
+        <button>Edit</button>
           <RiEditBoxLine />
-        </IconBtn>
+        </Link>
+        
       </div>
       <div className="my-10 flex flex-col gap-y-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
         <div className="flex w-full items-center justify-between">
           <p className="text-lg font-semibold text-richblack-5">About</p>
-          <IconBtn
-            text="Edit"
-            onclick={() => {
-              navigate("/dashboard/settings")
-            }}
-          >
-            <RiEditBoxLine />
-          </IconBtn>
+          <Link to="/dashboard/settings"
+        className="bg-yellow-50 px-3 py-1 flex items-center gap-1 rounded-md font-medium">
+        <button>Edit</button>
+          <RiEditBoxLine />
+        </Link>
         </div>
         <p
           className={`${
@@ -64,16 +59,13 @@ export default function MyProfile() {
           <p className="text-lg font-semibold text-richblack-5">
             Personal Details
           </p>
-          <IconBtn
-            text="Edit"
-            onclick={() => {
-              navigate("/dashboard/settings")
-            }}
-          >
-            <RiEditBoxLine />
-          </IconBtn>
+          <Link to="/dashboard/settings"
+        className="bg-yellow-50 px-3 py-1 flex items-center gap-1 rounded-md font-medium">
+        <button>Edit</button>
+          <RiEditBoxLine />
+        </Link>
         </div>
-        <div className="flex max-w-[500px] justify-between">
+        <div className="flex md:flex-row flex-col gap-y-5 md:gap-y-0 max-w-[500px] justify-between">
           <div className="flex flex-col gap-y-5">
             <div>
               <p className="mb-2 text-sm text-richblack-600">First Name</p>

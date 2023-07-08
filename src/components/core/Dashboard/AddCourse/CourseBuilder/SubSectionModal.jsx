@@ -161,7 +161,7 @@ export default function SubSectionModal({
               id="lectureTitle"
               placeholder="Enter Lecture Title"
               {...register("lectureTitle", { required: true })}
-              className="form-style w-full"
+              className="form-style w-full bg-richblack-700 rounded-md px-3 py-2 text-richblack-100"
             />
             {errors.lectureTitle && (
               <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -180,7 +180,7 @@ export default function SubSectionModal({
               id="lectureDesc"
               placeholder="Enter Lecture Description"
               {...register("lectureDesc", { required: true })}
-              className="form-style resize-x-none min-h-[130px] w-full"
+              className="form-style w-full bg-richblack-700 rounded-md px-3 py-2 text-richblack-100 min-h-[150px]"
             />
             {errors.lectureDesc && (
               <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -189,11 +189,14 @@ export default function SubSectionModal({
             )}
           </div>
           {!view && (
-            <div className="flex justify-end">
-              <IconBtn
+            <div className="flex bg-yellow-50  rounded-md w-fit px-3 py-1 justify-end">
+              {/* <IconBtn
                 disabled={loading}
                 text={loading ? "Loading.." : edit ? "Save Changes" : "Save"}
-              />
+              /> */}
+              <button>
+              {loading ? "Loading.." : edit ? "Save Changes" : "Save"}
+              </button>
             </div>
           )}
         </form>

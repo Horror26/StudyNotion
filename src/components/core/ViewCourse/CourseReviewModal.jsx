@@ -88,7 +88,7 @@ export default function CourseReviewModal({ setReviewModal }) {
                 id="courseExperience"
                 placeholder="Add Your Experience"
                 {...register("courseExperience", { required: true })}
-                className="form-style resize-x-none min-h-[130px] w-full"
+                className="form-style text-richblack-100 bg-richblack-700 rounded-md px-2 py-2 resize-x-none min-h-[130px] w-full"
               />
               {errors.courseExperience && (
                 <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -103,7 +103,9 @@ export default function CourseReviewModal({ setReviewModal }) {
               >
                 Cancel
               </button>
-              <IconBtn text="Save" />
+               <button className="bg-yellow-50 rounded-md px-4 py-1 font-semibold">
+                Save
+               </button>
             </div>
           </form>
         </div>

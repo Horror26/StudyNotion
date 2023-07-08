@@ -37,19 +37,21 @@ export default function CoursesTable({ courses, setCourses }) {
     setLoading(false)
   }
 
-  // console.log("All Course ", courses)
+  console.log("All Course ", courses)
 
   return (
     <>
-      <Table className="rounded-xl border border-richblack-800 ">
+      <Table className="rounded-xl border relative border-richblack-800">
         <Thead>
-          <Tr className="flex gap-x-10 rounded-t-md border-b border-b-richblack-800 px-6 py-2">
+          <Tr className="flex md:gap-x-10 md:w-full rounded-t-md border-b border-b-richblack-800 md:px-6 py-2">
+            <div className="text-richblack-100">
             <Th className="flex-1 text-left text-sm font-medium uppercase text-richblack-100">
               Courses
             </Th>
-            <Th className="text-left text-sm font-medium uppercase text-richblack-100">
+            </div>
+            {/* <Th className="text-left text-sm font-medium uppercase text-richblack-100">
               Duration
-            </Th>
+            </Th> */}
             <Th className="text-left text-sm font-medium uppercase text-richblack-100">
               Price
             </Th>
@@ -70,9 +72,9 @@ export default function CoursesTable({ courses, setCourses }) {
             courses?.map((course) => (
               <Tr
                 key={course._id}
-                className="flex gap-x-10 border-b border-richblack-800 px-6 py-8"
+                className="flex gap-x-10 border-b w-full border-richblack-800 px-6 py-8"
               >
-                <Td className="flex flex-1 gap-x-4">
+                <Td className="flex flex-1 gap-x-4 w-[100%]">
                   <img
                     src={course?.thumbnail}
                     alt={course?.courseName}
@@ -109,9 +111,9 @@ export default function CoursesTable({ courses, setCourses }) {
                     )}
                   </div>
                 </Td>
-                <Td className="text-sm font-medium text-richblack-100">
-                  2hr 30min
-                </Td>
+                {/* <Td className="text-sm font-medium text-richblack-100">
+                  2hr 30mins
+                </Td> */}
                 <Td className="text-sm font-medium text-richblack-100">
                   ₹{course.price}
                 </Td>

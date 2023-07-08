@@ -12,7 +12,7 @@ import {
 import {
   setCourse,
   setEditCourse,
-  setStep,
+  setStep
 } from "../../../../../slices/courseSlice"
 import IconBtn from "../../../../common/IconBtn"
 import NestedView from "./NestedView"
@@ -25,11 +25,11 @@ export default function CourseBuilderForm() {
     formState: { errors },
   } = useForm()
 
-  const { course } = useSelector((state) => state.course)
-  const { token } = useSelector((state) => state.auth)
-  const [loading, setLoading] = useState(false)
-  const [editSectionName, setEditSectionName] = useState(null)
-  const dispatch = useDispatch()
+  const { course } = useSelector((state) => state.course);
+  const { token } = useSelector((state) => state.auth);
+  const [loading, setLoading] = useState(false);
+  const [editSectionName, setEditSectionName] = useState(null);
+  const dispatch = useDispatch();
 
   // handle form submission
   const onSubmit = async (data) => {
@@ -60,6 +60,7 @@ export default function CourseBuilderForm() {
     if (result) {
       // console.log("section result", result)
       dispatch(setCourse(result))
+      //console.log("here it is->",result);
       setEditSectionName(null)
       setValue("sectionName", "")
     }
@@ -67,8 +68,8 @@ export default function CourseBuilderForm() {
   }
 
   const cancelEdit = () => {
-    setEditSectionName(null)
-    setValue("sectionName", "")
+    setEditSectionName(null);
+    setValue("sectionName", "");
   }
 
   const handleChangeEditSectionName = (sectionId, sectionName) => {
@@ -112,7 +113,7 @@ export default function CourseBuilderForm() {
             disabled={loading}
             placeholder="Add a section to build your course"
             {...register("sectionName", { required: true })}
-            className="form-style w-full"
+            className="form-style w-full rounded-md px-3 py-2 bg-richblack-700 text-richblack-100"
           />
           {errors.sectionName && (
             <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -121,14 +122,18 @@ export default function CourseBuilderForm() {
           )}
         </div>
         <div className="flex items-end gap-x-4">
-          <IconBtn
-            type="submit"
+          {/* <IconBtn
+            type="Submit"
             disabled={loading}
             text={editSectionName ? "Edit Section Name" : "Create Section"}
             outline={true}
           >
             <IoAddCircleOutline size={20} className="text-yellow-50" />
-          </IconBtn>
+          </IconBtn> */}
+          <div className="flex items-center gap-x-1 text-richblack-100">
+            <button>{editSectionName ? "Edit Section Name" : "Create Section"}</button>
+            <IoAddCircleOutline size={20} className="text-yellow-50" />
+          </div>
           {editSectionName && (
             <button
               type="button"
@@ -151,10 +156,14 @@ export default function CourseBuilderForm() {
         >
           Back
         </button>
-        <IconBtn disabled={loading} text="Next" onclick={goToNext}>
+        {/* <IconBtn disabled={loading} text="Next" onclick={goToNext}>
           <MdNavigateNext />
-        </IconBtn>
+        </IconBtn> */}
+        <div className="flex items-center bg-yellow-50 rounded-md px-3 py-1 font-semibold" onClick={goToNext}>
+          <button>Next</button>
+          <MdNavigateNext />
+        </div>
       </div>
     </div>
   )
-}
+} 
