@@ -1,4 +1,3 @@
-// Icons Import
 import { FaArrowRight } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
@@ -193,4 +192,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
