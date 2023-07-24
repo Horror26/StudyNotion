@@ -44,7 +44,7 @@ function Home() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="mt-8 flex flex-row gap-7 lg:visible xl:visible  collapse">
+        <div className="mt-8 lg:flex xl:flex md:flex flex-row gap-7 hidden">
           <CTAButton active={true} linkto={"/signup"}>
             Learn More
           </CTAButton>
@@ -52,7 +52,7 @@ function Home() {
             Book a Demo
           </CTAButton>
         </div>
-        <div className=" flex flex-row gap-7 lg:collapse xl:collapse visible ">
+        <div className=" flex  flex-row gap-7 lg:hidden xl:hidden md:hidden ">
           <CTAButton active={true} linkto={"/signup"}>
            Signup
           </CTAButton>
