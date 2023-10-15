@@ -16,7 +16,7 @@ import TimelineSection from "../components/core/HomePage/TimelineSection"
 
 function Home() {
   return (
-    <div>
+    <>
       {/* Section 1 */}
       <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
         {/* Become a Instructor Button */}
@@ -196,7 +196,7 @@ function Home() {
 
       {/* Footer */}
       <Footer />
-    </div>
+    </>
   )
 }
 
