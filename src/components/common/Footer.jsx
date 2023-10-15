@@ -72,7 +72,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="p-8 flex flex-col sm:flex-row justify-center items-center gap-4 ">
+        <div className=" flex flex-col sm:flex-row justify-center items-center gap-4 ">
         <p className="text-white text-2xl my-2  ">© 2023</p>
         <div className=" ">
         <img  src={Logo} alt=""/>
