@@ -87,12 +87,10 @@ The back-end of StudyNotion uses several data models and database schemas to man
 
 The database for the platform is built using MongoDB, a NoSQL database that provides a flexible and scalable data storage solution. MongoDB allows for the storage of unstructured and semi-structured data. The database stores the course content, user data, and other relevant information related to the platform.
 
-![Database Schema](![image](img/schema)
-)
+![Database Schema](img/schema.png)
 
 ### Architecture Diagram
 
 Below is a high-level diagram that illustrates the architecture of the StudyNotion EdTech platform:
 
-![Architecture](![image](https://github.com/Horror26/StudyNotion/assets/98795410/693b2787-94ca-4d2a-b801-4db641ab4730)
-)
+![Architecture](img/arcti.png)
