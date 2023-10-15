@@ -7,8 +7,8 @@ import { FaLinkedin, FaTwitter, FaGoogle, FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <div>
-      <footer className="footer">
+    <>
+      <footer className="footer" >
         <div className="container">
           <div className="row">
             <div className="footer-col">
@@ -75,12 +75,12 @@ export const Footer = () => {
         <div className=" flex flex-col sm:flex-row justify-center items-center gap-4 ">
         <p className="text-white text-2xl my-2  ">© 2023</p>
         <div className=" ">
-        <img  src={Logo} alt=""/>
+        <img  src={Logo} alt="" width={120} height={32} className="rounded border-2 border-white p-1" />
         </div>
       </div>
       
       </footer>
-    </div>
+    </>
   );
 };
 
