@@ -53,9 +53,10 @@ function Navbar() {
       <div className="flex w-[96%] md:w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="Logo" width={120} height={32} loading="lazy" />
+          <img src={logo} alt="Logo" width={120} height={32} loading="lazy" className="rounded border-2 border-white p-1" />
         </Link>
         {/* Navigation links */}
+
         <nav className="">
           <ul className="flex md:gap-x-6 text-richblack-25">
             {NavbarLinks.map((link, index) => (
@@ -117,6 +118,7 @@ function Navbar() {
             ))}
           </ul>
         </nav>
+     
         {/* Login / Signup / Dashboard */}
         <div className="items-center gap-x-2 flex">
           {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
