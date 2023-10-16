@@ -7,12 +7,11 @@
 
 ## Configuration
 
-1. Set up a MongoDB database and obtain the connection URL.
-2. Create a `.env` file in the root directory with the following environment variables:
-   ```
-   MONGODB_URI=<your-mongodb-connection-url>
-   JWT_SECRET=<your-jwt-secret-key>
-   ```
+1. For only frontend replace the example.env file in root with .env and
+     ```sh
+    npm run start
+    ```
+2. Replace an `example.env` files with your enviroment virables
 3. Start the development server.
     ```sh
     npm run dev
