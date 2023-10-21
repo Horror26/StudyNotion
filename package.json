@@ -7,6 +7,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "aos": "^2.3.4",
     "axios": "^1.4.0",
+    "caniuse-lite": "^1.0.30001551",
     "chart.js": "^4.3.0",
     "concurrently": "^8.0.1",
     "copy-to-clipboard": "^3.3.3",
