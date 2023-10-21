@@ -1,4 +1,7 @@
 # StudyNotion
+## Live 
+https://study-notion-frontend-wheat.vercel.app/ \
+For Otp please check the spam section
 ## Installation
 
 1. Clone the repository: `https://github.com/Horror26/StudyNotion.git`
