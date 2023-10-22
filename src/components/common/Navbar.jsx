@@ -53,7 +53,7 @@ function Navbar() {
       <div className="flex w-[96%] md:w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="Logo" width={120} height={32} loading="lazy" className="rounded border-2 border-white p-1" />
+          <img src={logo} alt="Logo" width={120} height={32} loading="lazy" className="rounded-xl p-2 border-2 border-white " />
         </Link>
         {/* Navigation links */}
 
