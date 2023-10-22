@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Image and Video Import
-import Banner from "../assets/Images/banner.mp4"
+import Banner from "../assets/Images/banner1.mp4"
 // Component Imports
 import Footer from "../components/common/Footer"
 import ReviewSlider from "../components/common/ReviewSlider"
