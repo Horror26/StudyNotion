@@ -15,7 +15,7 @@ export const Footer = () => {
               <h4>About</h4>
               <ul>
                 <li>
-                  <a href="#">about us</a>
+                  <a href="/about">about us</a>
                 </li>
                 <li>
                   <a href="#">our services</a>
