@@ -58,7 +58,7 @@ function VerifyEmail() {
             Verify Email
           </h1>
           <p className="text-[1.125rem] leading-[1.625rem] my-4 text-richblack-100">
-            A verification code has been sent to you. Enter the code below
+            A verification code has been sent to you (please check the spam section).
           </p>
           <form onSubmit={handleVerifyAndSignup}>
             <OtpInput
