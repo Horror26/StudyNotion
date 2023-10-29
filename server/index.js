@@ -9,7 +9,7 @@ const courseRoutes = require("./routes/Course");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const {cloudinaryConnect } = require("./config/cloudinary");
+const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 
@@ -21,12 +21,12 @@ database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());	
+app.use(cors());
 
 app.use(
 	fileUpload({
-		useTempFiles:true,
-		tempFileDir:"/tmp",
+		useTempFiles: true,
+		tempFileDir: "/tmp",
 	})
 )
 //cloudinary connection
@@ -43,8 +43,8 @@ app.use("/api/v1/payment", paymentRoutes);
 
 app.get("/", (req, res) => {
 	return res.json({
-		success:true,
-		message:'Your server is up and running....'
+		success: true,
+		message: 'Your server is up and running....'
 	});
 });
 

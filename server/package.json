@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.1.1",
     "bscript": "^0.1.0",
     "cloudinary": "^1.36.4",
     "cookie-parser": "^1.4.6",
@@ -26,7 +26,7 @@
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.22",
     "otp-generator": "^4.0.1",
-    "razorpay": "^2.8.6",
+    "razorpay": "^2.9.2",
     "router": "^1.3.8"
   }
 }
