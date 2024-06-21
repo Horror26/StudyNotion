@@ -2,7 +2,7 @@ name: Deploy to Azure Storage and VM
 
 on:
   push:
-    branches: [ main-code-deploy ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -50,8 +50,12 @@ jobs:
         ssh -i vm_key.pem ${{ secrets.VM_USERNAME }}@${{ secrets.VM_IP_ADDRESS }} << 'EOF'
         cd /home/azureuser/esd
         touch .env
-        echo "${{ secrets.ENV }}" > .env
+        echo "${{ secrets.ENV_MAIN }}" > .env
         unzip -o project_prod.zip
+        cd /home/azureuser/esd/server
+        touch .env
+        echo "${{ secrets.ENV_SERVER }}" > .env
+        cd /home/azureuser/esd
         rm project_prod.zip
         sudo systemctl stop web_app.service
         sudo systemctl daemon-reload
