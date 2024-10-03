@@ -2,6 +2,11 @@
 ## Live 
 https://study-notion-frontend-wheat.vercel.app/ \
 otp mail will be in your spam section
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+
 ## Installation
 
 1. Clone the repository: `https://github.com/Horror26/StudyNotion.git`
