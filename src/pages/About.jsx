@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import FoundingStory from "../assets/Images/FoundingStory.png"
-import BannerImage1 from "../assets/Images/aboutus1.webp"
-import BannerImage2 from "../assets/Images/aboutus2.webp"
-import BannerImage3 from "../assets/Images/aboutus3.webp"
+// import FoundingStory from "../assets/Images/FoundingStory.png"
+// import BannerImage1 from "../assets/Images/aboutus1.webp"
+// import BannerImage2 from "../assets/Images/aboutus2.webp"
+// import BannerImage3 from "../assets/Images/aboutus3.webp"
 import ContactFormSection from "../components/core/AboutPage/ContactFormSection"
 import LearningGrid from "../components/core/AboutPage/LearningGrid"
 import Quote from "../components/core/AboutPage/Quote"
@@ -12,6 +12,10 @@ import StatsComponenet from "../components/core/AboutPage/Stats"
 import HighlightText from "../components/core/HomePage/HighlightText"
 import ReviewSlider from "../components/common/ReviewSlider"
 import Footer from "../components/common/Footer"
+import AboutImg7 from "../assets/Images/AboutImg7.webp"
+import AboutImg3 from "../assets/Images/AboutImg3.webp"
+import AboutImg6 from "../assets/Images/AboutImg6.webp"
+import AboutImg2 from "../assets/Images/AboutImg2.webp"
 
 const About = () => {
   useEffect(() => {
@@ -36,9 +40,12 @@ const About = () => {
           </header>
           <div className="sm:h-[70px] lg:h-[150px]"></div>
           <div className="absolute bottom-0 left-[50%] grid w-[100%] translate-x-[-50%] translate-y-[30%] grid-cols-3 gap-3 lg:gap-5">
-            <img data-aos="flip-right" src={BannerImage1} alt="" />
-            <img data-aos="flip-right" src={BannerImage2} alt="" />
-            <img data-aos="flip-right" src={BannerImage3} alt="" />
+            {/* <img data-aos="flip-right" src={BannerImage1} alt="" /> */}
+            {/* <img data-aos="flip-right" src={BannerImage2} alt="" /> */}
+            {/* <img data-aos="flip-right" src={BannerImage3} alt="" /> */}
+            <img data-aos="flip-right" className="rounded-xl" src={AboutImg6} alt="" />
+            <img data-aos="flip-right" className="rounded-xl" src={AboutImg7} alt="" />
+            <img data-aos="flip-right" className="rounded-xl" src={AboutImg3} alt="" />
           </div>
         </div>
       </section>
@@ -77,9 +84,10 @@ const About = () => {
 
             <div>
               <img
-                src={FoundingStory}
+                // src={FoundingStory}
+                src={AboutImg2}
                 alt=""
-                className="shadow-[0_0_20px_0] shadow-[#FC6767]"
+                className="shadow-[0_0_20px_0] shadow-[#FC6767] w-[600px]"
               />
             </div>
           </div>
