@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import { ToastContainer } from "react-toastify";
-import { toast } from "react-hot-toast"
+import { toast } from "react-hot-toast";
 import 'react-toastify/dist/ReactToastify.css';
+
+const accessKey = process.env.REACT_APP_ACCESS_KEY;
 
 export default function ContactUsForm() {
   const { register, handleSubmit, reset } = useForm();
   const [isSuccess, setIsSuccess] = useState(false);
   const [result, setResult] = useState(null);
-
-  const accessKey = "435774fc-cb4a-4a0f-963f-767fb1ca3d5c";
 
   const { submit: onSubmit } = useWeb3Forms({
     access_key: accessKey,
@@ -29,10 +29,7 @@ export default function ContactUsForm() {
 
   return (
     <div>
-      <form
-        className="flex flex-col gap-7"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form className="flex flex-col gap-7" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-5 lg:flex-row">
           <div className="flex flex-col gap-2 lg:w-[48%]">
             <label htmlFor="name" className="label-style">
