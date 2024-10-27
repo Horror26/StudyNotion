@@ -103,7 +103,7 @@ function Home() {
               active: false,
             }}
             codeColor={"text-yellow-25"}
-            codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
+            codeblock={`import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom sklearn.linear_model import LogisticRegression\n\nX = np.array([1,2,3,4,5])\nY = np.array([1,2,2,2,1])\n\nmodel = LogisticRegression()\nmodel.fit(X,Y)`}
             backgroundGradient={<div className="codeblock1 absolute"></div>}
           />
         </div>
