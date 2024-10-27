@@ -2,6 +2,11 @@
 ## Live 
 https://study-notion-frontend-wheat.vercel.app/ \
 otp mail will be in your spam section
+
+## Contributing
+HacktoberFest Is on !!
+Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+
 ## Installation
 
 1. Clone the repository: `https://github.com/Horror26/StudyNotion.git`
@@ -19,6 +24,62 @@ otp mail will be in your spam section
     ```sh
     npm run dev
     ```
+ 4. **Creating a Category (Backend)**
+   To create a category, follow these steps using Postman or any other API client:
+
+   a. **Send OTP**
+      ```http
+      POST http://localhost:4000/api/v1/auth/sendotp
+      ```
+      Request Body:
+      ```json
+       {
+         "email": "testadmin@gmail.com"
+       }
+      ```
+
+   b. **Sign Up**
+      ```http
+      POST http://localhost:4000/api/v1/auth/signup
+      ```
+      Request Body:
+      ```json
+       {
+         "firstName": "test",
+         "lastName": "admin",
+         "password": "123",
+         "confirmPassword": "123",
+         "email": "testadmin@gmail.com",
+         "accountType": "Admin",
+         "otp": "(response from sendotp API)"
+       }
+      ```
+
+   c. **Login**
+      ```http
+      POST http://localhost:4000/api/v1/auth/login
+      ```
+      Request Body:
+      ```json
+       {
+         "email": "test@gmail.com",
+         "password": "123"
+       }
+      ```
+
+   d. **Create Category**
+      ```http
+      POST http://localhost:4000/api/v1/course/createCategory
+      ```
+      Request Body:
+      ```json
+       {
+         "name": "Web DEV",
+         "description": "MWEN STACK"
+       }
+      ```
+
+    
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
