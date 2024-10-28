@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
-import { ToastContainer } from "react-toastify";
 import { toast } from "react-hot-toast";
-import "react-toastify/dist/ReactToastify.css";
 
 const accessKey = process.env.REACT_APP_ACCESS_KEY;
 
@@ -100,8 +98,6 @@ export default function ContactUsForm() {
           )}
         </button>
       </form>
-
-      <ToastContainer />
     </div>
   );
 }
