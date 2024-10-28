@@ -18,14 +18,14 @@ const LearningLanguageSection = () => {
             </div>
             <div className="flex flex-col lg:flex-row items-center justify-center mt-8 lg:mt-0">
               <img
-                src={Know_your_progress}
-                alt=""
-                className="object-contain  lg:-mr-32 "
-              />
-              <img
                 src={Compare_with_others}
                 alt=""
-                className="object-contain lg:-mb-10 lg:-mt-0 -mt-12"
+                className="object-contain  lg:-mr-32 rotate-[25deg]"
+              />
+              <img
+                src={Know_your_progress}
+                alt=""
+                className="object-contain lg:-mb-10 lg:-mt-0 -mt-12 -rotate-[20deg]"
               />
               <img
                 src={Plan_your_lessons}
