@@ -10,56 +10,68 @@ const CourseProgress = require("../models/CourseProgress");
 
 //initiate the razorpay order
 exports.capturePayment = async(req, res) => {
+    try {
+        const {courses} = req.body;
+        const userId = req.user.id;
 
-    const {courses} = req.body;
-    const userId = req.user.id;
-
-    if(courses.length === 0) {
-        return res.json({success:false, message:"Please provide Course Id"});
-    }
-
-    let totalAmount = 0;
-
-    for(const course_id of courses) {
-        let course;
-        try{
-           
-            course = await Course.findById(course_id);
-            if(!course) {
-                return res.status(200).json({success:false, message:"Could not find the course"});
-            }
-
-            const uid  = new mongoose.Types.ObjectId(userId);
-            if(course.studentsEnrolled.includes(uid)) {
-                return res.status(200).json({success:false, message:"Student is already Enrolled"});
-            }
-
-            totalAmount += course.price;
+        if(!courses || courses.length === 0) {
+            return res.status(400).json({success:false, message:"Please provide Course Id"});
         }
-        catch(error) {
-            console.log(error);
-            return res.status(500).json({success:false, message:error.message});
-        }
-    }
-    const currency = "INR";
-    const options = {
-        amount: totalAmount * 100,
-        currency,
-        receipt: Math.random(Date.now()).toString(),
-    }
 
-    try{
+        let totalAmount = 0;
+
+        for(const course_id of courses) {
+            let course;
+            try {
+                course = await Course.findById(course_id);
+                if(!course) {
+                    return res.status(404).json({success:false, message:"Could not find the course"});
+                }
+
+                const uid = new mongoose.Types.ObjectId(userId);
+                if(course.studentsEnrolled.includes(uid)) {
+                    return res.status(400).json({success:false, message:"Student is already Enrolled"});
+                }
+
+                totalAmount += course.price;
+            }
+            catch(error) {
+                console.error("Error finding course:", error);
+                return res.status(500).json({success:false, message:"Error processing course details"});
+            }
+        }
+
+        const currency = "INR";
+        const options = {
+            amount: Math.round(totalAmount * 100), // Ensure amount is a whole number
+            currency,
+            receipt: `receipt_${Date.now()}`,
+            notes: {
+                userId: userId,
+                courses: courses
+            }
+        };
+
         const paymentResponse = await instance.orders.create(options);
-        res.json({
-            success:true,
-            message:paymentResponse,
-        })
+        
+        // Return the response in the expected format
+        return res.status(200).json({
+            success: true,
+            data: {
+                orderId: paymentResponse.id,
+                amount: paymentResponse.amount,
+                currency: paymentResponse.currency,
+                key: process.env.RAZORPAY_KEY
+            }
+        });
     }
     catch(error) {
-        console.log(error);
-        return res.status(500).json({success:false, mesage:"Could not Initiate Order"});
+        console.error("Payment initiation error:", error);
+        return res.status(500).json({
+            success: false,
+            message: error.message || "Could not initiate payment"
+        });
     }
-
 }
 
 
